@@ -113,21 +113,27 @@ body {
     justify-content: center;
     align-items: center;
 }
+main {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 /* Entire product card styling */
 .product-preview-card-component {
     display: grid;
-    margin: 0 1.5rem 0 1.5rem;
+    margin: 5rem 1.5rem 5rem 1.5rem;
     border-radius: 0.625rem;
     overflow: hidden;
-    height: 62vh;
 }
 
 /* Individual product card styling */
 .product-card {
     display: grid;
-    grid-template-rows: 0.85fr 1fr 2.5fr 1fr;
-    padding: 2.8rem 2.8rem 1rem 3rem;
+    grid-template-rows: 0.85fr 1fr 2.3fr 1fr;
+    padding: 2.8rem 2.8rem 2.5rem 3rem;
+    row-gap: 1rem;
 }
 .sedan-card {
     background-color: var(--bright-orange);
@@ -161,11 +167,11 @@ body {
     border-radius: 5rem;
     width: 9rem;
     height: 3rem;
+    cursor: pointer;
 }
 .learn-more-button {
     font-family: var(--lexend-deca-font);
     font-size: 14px;
-
 }
 .sedan-card .learn-more-button {
     color: var(--bright-orange);
@@ -177,11 +183,19 @@ body {
     color: var(--very-dark-cyan);
 }
 
+/* Button hover/active styling */
+.button-container:active {
+    border: 2px solid white;
+    background-color: inherit;
+}
+.button-container:active .learn-more-button {
+    color: var(--very-light-gray);
+}
+
 /* Footer styling */
 footer {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    margin-top: 0;
 }
 .attribution {
     display: flex;
@@ -190,6 +204,7 @@ footer {
     align-items: center;
     font-size: 11px;
     text-align: center;
+    column-gap: 0.2rem;
 }
 .attribution-text {
     color: black;
@@ -208,8 +223,16 @@ footer {
 
 /* Desktop styling */
 @media only screen and (min-width: 769px) {
+    /* Entire product card styling */
     .product-preview-card-component {
         margin: 0 16.5rem 0 16.5rem;
         grid-template-columns: 1fr 1fr 1fr;
+        height: 62vh;
+    }
+    /* Individual product card styling */
+    .product-card {
+        grid-template-rows: 0.85fr 1fr 2.5fr 1fr;
+        padding-bottom: 1rem;
+        row-gap: 0;
     }
 }
